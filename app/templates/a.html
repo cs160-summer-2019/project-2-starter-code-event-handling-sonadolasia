@@ -62,32 +62,35 @@
 
 
 <script type="text/javascript">
-	// your solution here
+	// click on purple -> pop all purple
 	$(".p2-circle.bg-purple").click(function(){
 		$( ".p2-circle.bg-purple" ).hide();
 	})
 
+	//click on green -> pop all green AND pop all blue 
+	$(".p2-circle.bg-green").click(function(){
+        $( ".p2-circle.bg-green" ).hide();
+		$(".p2-circle.bg-blue").hide();
+	})
+
+	//click on orange w/ border -> pop all bubbles that are orange w/ border
+	$(".p2-circle.bg-orange.p2-border").click(function(){
+		$(".p2-circle.bg-orange.p2-border").hide();
+	})
+
+	//hover on gradient -> hide gradient
 	$("#gradient-circle").hover(function(){
 		$( this).hide();
 	})
 
-	$(".p2-circle.bg-orange").click(function(){
-		$(".p2-border").hide();
-		$(".bg-orange").hide();
-	})
-
+	//reset button
 	$(".btn").click(function(){
 		$( ".p2-circle" ).show();
 	})
 
-	$(".p2-circle.bg-green").click(function(){
-		if(Math.random() < 0.5) {
-        $( ".p2-circle.bg-green" ).hide();
-    	}
-		else{
-			$(".p2-circle.bg-blue").hide();
-		}
-	})
+
+
+
 
 </script>
 </body>

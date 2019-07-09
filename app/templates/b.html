@@ -9,7 +9,7 @@
 	<link rel="stylesheet" type="text/css" href="../../static/css/main.css" />
 
 	<script src="../../static/vendors/jquery/jquery-3.3.1.min.js"></script>
-	<script src="../../static//vendors/jquery-ui/jquery-ui.min.js"></script>
+	<script src="../../static/vendors/jquery-ui/jquery-ui.min.js"></script>
 
 
 </head>
@@ -45,7 +45,7 @@
 	var displayCoord = function(){
 		if(k != 0){
 			color = ["bg-blue", "bg-purple", "bg-green", "bg-yellow", "bg-orange"];
-			grad = ["", "gradient-circle"];
+			grad = ["", "gradient-circle", "", "", ""];
 			bord = ["", "p2-border"];
 
 			var c = color[Math.floor(Math.random() * color.length)];
@@ -58,36 +58,11 @@
 			$(".shape-container").append("<div class='p2-circle " + c + " " + b + "' " + "id='" + g + "'></div>")
 	        setTimeout(displayCoord, 1000);
     	}
-    	
     };
 
     var repeater; 
 
     var checks = function(){
-    	$(".p2-circle.bg-purple").click(function(){
-			$( ".p2-circle.bg-purple" ).hide();
-		})
-
-		$("#gradient-circle").hover(function(){
-			$(this).hide();
-		})
-		$("#gradient-circle").mouseover(function(){
-			$(this).hide();
-		})
-
-		$(".p2-circle.bg-orange").click(function(){
-			$(".p2-border").hide();
-			$(".bg-orange").hide();
-		})	
-
-		$(".p2-circle.bg-green").click(function(){
-			if(Math.random() < 0.5) {
-	        $( ".p2-circle.bg-green" ).hide();
-	    	}
-			else{
-				$(".p2-circle.bg-blue").hide();
-			}
-		})
 
 		repeater = setTimeout(checks, 10);
     }
@@ -98,6 +73,7 @@
 	$(".btn").click(function(){
 		k = 0
 	})
+
 
 </script>
 </body>
